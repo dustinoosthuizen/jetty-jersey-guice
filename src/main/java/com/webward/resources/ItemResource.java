@@ -8,6 +8,8 @@ import com.webward.entities.Item;
 import com.webward.transformer.ItemTransformer;
 
 import javax.ws.rs.*;
+//import javax.ws.rs.container.AsyncResponse;
+//import javax.ws.rs.container.Suspended;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
@@ -65,11 +67,27 @@ public class ItemResource {
         return Response.status(204).build();
     }
 
+
 //    @GET
-//    @Produces("text/plain")
-//    @Path("/whoAsync/{who}")
-//    public String whoAsync(@Suspended final AsyncResponse asyncResponse) {
+//    @Produces("application/json")
+//    @Path("/asyncGet")
+//    public void asyncGet(@Suspended final AsyncResponse response){
 //
-//        return "Greetings";
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    Thread.currentThread().sleep(20000);
+//                }catch(InterruptedException ie)
+//                {
+//                    ie.printStackTrace();
+//
+//                }
+//
+//                response.resume("Async operation finished");
+//            }
+//
+//
+//        }).start();
 //    }
 }
